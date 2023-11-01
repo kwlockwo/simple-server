@@ -3,7 +3,7 @@
 # Automatic setting of NODE_OPTIONS for `--max-old-space-size`
 
 max_mem=$(cat /sys/fs/cgroup/memory.max)
-max_mem_mb=$max_mem/1024/1024
+max_mem_mb=$(($max_mem/1024/1024))
 
 case $max_mem_mb in
 
@@ -40,7 +40,7 @@ case $max_mem_mb in
     # Custom Plan
     *)
         # max mem - 512MB (same as above)
-        custom_max_mem=$max_mem_mb-512
+        custom_max_mem=$(($max_mem_mb-512))
         export NODE_OPTIONS="--max-old-space-size=$custom_max_mem $NODE_OPTIONS"
         echo "setting NODE_OPTIONS=$NODE_OPTIONS"
 esac
