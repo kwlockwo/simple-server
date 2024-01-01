@@ -11,6 +11,8 @@ const requestListener = function (req, res) {
     }
     else
         res.end('Invalid Request!');
+
+    console.log(JSON.stringify(res.headers));
 }
 
 const server = http.createServer(requestListener).listen(port);
