@@ -32,7 +32,7 @@ case $max_mem_mb in
         export NODE_OPTIONS="--max-old-space-size=15872 $NODE_OPTIONS"
         echo "setting NODE_OPTIONS=$NODE_OPTIONS"
         ;;
-    # 32GB - Render Standard
+    # 32GB - Render Pro Ultra
     32768)
         export NODE_OPTIONS="--max-old-space-size=32256 $NODE_OPTIONS"
         echo "setting NODE_OPTIONS=$NODE_OPTIONS"
