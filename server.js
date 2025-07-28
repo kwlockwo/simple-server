@@ -18,7 +18,7 @@ const server = http.createServer(requestListener).listen(port);
 
 console.log(`Node.js web server at port ${port} is running..`);
 
-console.error('All environment variables:', Obects.keys(process.env).sort());
+console.error('All environment variables:', Objects.keys(process.env).sort());
 
 const fooEnvVar = process.env.FOO;
 console.error('Specific environment variables set:', {
