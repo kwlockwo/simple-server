@@ -1,7 +1,6 @@
 const port = 5050;
 const http = require('http');
 
-
 const requestListener = function (req, res) {
     console.log(JSON.stringify(req.headers));
     if(req.url == '/') {
@@ -18,3 +17,10 @@ const requestListener = function (req, res) {
 const server = http.createServer(requestListener).listen(port);
 
 console.log(`Node.js web server at port ${port} is running..`);
+
+console.error('All environment variables:', Obects.keys(process.env).sort());
+
+const fooEnvVar = process.env.FOO;
+console.error('Specific environment variables set:', {
+    hasFooEnvVar: !!fooEnvVar;
+});
