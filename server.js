@@ -22,5 +22,5 @@ console.error('All environment variables:', Obects.keys(process.env).sort());
 
 const fooEnvVar = process.env.FOO;
 console.error('Specific environment variables set:', {
-    hasFooEnvVar: !!fooEnvVar;
+    hasFooEnvVar: !!fooEnvVar
 });
