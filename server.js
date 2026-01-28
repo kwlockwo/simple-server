@@ -1,4 +1,4 @@
-const port = 5050;
+const port = process.env.PORT || 5050;
 const http = require('http');
 
 const requestListener = function (req, res) {
