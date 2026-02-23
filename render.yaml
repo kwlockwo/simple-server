@@ -6,7 +6,7 @@ services:
     name: pr-simple-server
     repo: https://github.com/kwlockwo/simple-server
     region: oregon
-    numInstances: 4
+    numInstances: 2
     buildCommand: echo $TEST_SYNC && npm install
     startCommand: node server.js
     envVars:
