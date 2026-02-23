@@ -3,7 +3,7 @@ previews:
 services:
   - type: web
     runtime: node
-    name: pr-simple-server
+    name: pr-simple-server-name-change
     repo: https://github.com/kwlockwo/simple-server
     region: oregon
     numInstances: 4
