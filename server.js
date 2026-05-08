@@ -5,7 +5,8 @@ const service = process.env.RENDER_SERVICE_NAME || 'Simple-Server';
 const requestListener = function (req, res) {
     console.log(JSON.stringify(req.headers));
     if(req.url == '/') {
-        res.writeHead(200, { 'Content-Type': 'text/html', 'X-Service': service });   
+        res.removeHeader('rndr-id');
+        res.writeHead(200, { 'Content-Type': 'text/html', 'X-Service': service });
         res.write('<html><body><p>Home Page</p></body></html>');
         res.end();
     }
