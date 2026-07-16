@@ -1,0 +1,12 @@
+previews:
+  generation: automatic
+projects:
+  - name: Simple Project
+    environments:
+      - name: production
+        services:
+          - type: web
+            runtime: node
+            name: simple-server-in-project
+            buildCommand: npm install
+            startCommand: node server.js
