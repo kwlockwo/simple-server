@@ -1,7 +1,7 @@
 previews:
   generation: automatic
 projects:
-  - name: Simple Project
+  - name: Another Simple Project
     environments:
       - name: production
         services:
