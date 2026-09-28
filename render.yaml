@@ -13,3 +13,39 @@ services:
       - key: TEST_SYNC
         sync: false
       - fromGroup: my-blueprint-managed-group
+projects:
+- name: Regional Simple Servers
+  environments:
+  - name: Production
+    services:
+    - type: web
+      name: simple-server
+      runtime: node
+      repo: https://github.com/kwlockwo/simple-server
+      plan: starter
+      envVars:
+      - key: foo
+        sync: false
+      - key: .test
+        sync: false
+      - key: .key
+        sync: false
+      - key: KEY2
+        sync: false
+      - key: KEY
+        sync: false
+      - key: TEST
+        sync: false
+      - key: NODE_VERSION
+        sync: false
+      - key: bar
+        sync: false
+      region: oregon
+      buildCommand: './max-old-space-size.sh  && echo "Is IS_PULL_REQUEST: $IS_PULL_REQUEST"
+        && npm install'
+      startCommand: 'export FOO=$foo && echo "+++Starting: $FOO +++" && cat ./.test
+        && node --inspect=9229 server.js'
+      healthCheckPath: /
+      domains:
+      - simple-server-oregon.dfl-fantasy-football.net
+      autoDeployTrigger: commit
